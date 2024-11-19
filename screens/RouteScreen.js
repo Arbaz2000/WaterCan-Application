@@ -43,7 +43,7 @@ const RouteScreen = ({ navigation }) => {
         setLoading(true);
         const driverId = await AsyncStorage.getItem("driverId");
         const response = await axios.get(
-          `https://watercan.onrender.com/api/route/${driverId}`
+          `https://52.66.246.44:9000/api/route/${driverId}`
         );
         setLoading(false);
         setRoutesData(response.data.customersByRoute);

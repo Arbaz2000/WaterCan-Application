@@ -43,7 +43,7 @@ const TempCustomer = () => {
       try {
         const driverId = await AsyncStorage.getItem("driverId");
         const response = await axios.get(
-          `https://watercan.onrender.com/api/get-all-admin-assigned/to/${driverId}`
+          `https://52.66.246.44:9000/api/get-all-admin-assigned/to/${driverId}`
         );
         setAdminOptions(response.data.users);
       } catch (error) {
@@ -70,7 +70,7 @@ const TempCustomer = () => {
       console.log("payload---", payload);
       console.log("selectedAdmin---", selectedAdmin);
       const response = await axios.post(
-        `https://watercan.onrender.com/api/customers/to/${selectedAdmin}`,
+        `https://52.66.246.44:9000/api/customers/to/${selectedAdmin}`,
         payload
       );
 
@@ -97,7 +97,7 @@ const TempCustomer = () => {
     try {
       console.log("ADMIN", admin);
       const response = await axios.post(
-        `https://watercan.onrender.com/api/get-route`,
+        `https://52.66.246.44:9000/api/get-route`,
         { userId: admin }
       );
       setAdminRoutes(response.data.routes);

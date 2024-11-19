@@ -39,9 +39,10 @@ useEffect(() => {
               email: values.email,
               password: values.password,
             };
-
+            console.log("payload", payload)
             try {
-              const res = await axios.post("https://watercan.onrender.com/api/verify-driver", payload);
+              const res = await axios.post("http://55.66.264.44:9000/api/verify-driver", payload);
+              console.log("respone", res)
               if (res.data.success) {
                 await AsyncStorage.setItem('driverId', res.data.driver._id);
                 setTimeout(() => {
@@ -98,7 +99,9 @@ const styles = StyleSheet.create({
   },
   formContainer:{
     // backgroundColor:'red',
-    marginBottom:60
+    marginBottom:60,
+    justifyContent:'center',
+    alignItems:'center'
   },
   text:{
     fontSize: 20,

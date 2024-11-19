@@ -25,7 +25,7 @@ const RegisterScreen = ({ navigation }) => {
             password:values.password
           }
           try{
-            const res = await axios.post("https://watercan.onrender.com/api/new-driver",payload)
+            const res = await axios.post("https://52.66.246.44:9000/api/new-driver",payload)
             await AsyncStorage.setItem('driverId', res.data.driver._id);
             console.log("Driver Response :",res.data)
             setNotify(true);
