@@ -50,9 +50,9 @@ const Dashboard = () => {
         <Image source={require('../assets/truck-icon.png')} style={styles.cardImage} />
         </View>
         <View style={styles.driverDetailCard}>
-        <Text style={styles.driverCardText}>Driver Name : {driver&&driver.name}</Text>
-        <Text style={styles.driverCardText}>Driver ID : {driver&&driver._id}</Text>
-        <Text style={styles.driverCardText}>Driver Email ID : {driver&&driver.email}</Text>
+        <Text style={styles.driverCardText}>Driver Name : Harshendra </Text>
+        <Text style={styles.driverCardText}>Driver ID : 673f154d95e3bcf08e3e8a91</Text>
+        <Text style={styles.driverCardText}>Driver Email ID : up.harsh+707@gmail.com</Text>
         </View>
       </View>
       <View style={styles.containerChild}>
