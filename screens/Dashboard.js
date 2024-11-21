@@ -21,7 +21,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const driverId = await AsyncStorage.getItem('driverId');
-        const response = await axios.get(`https://52.66.246.44:9000/api/driver/${driverId}`);
+        const response = await axios.get(`http://52.66.246.44:9000/api/driver/${driverId}`);
            if (response.data) {
           setDriver(response.data);
           console.log("Driver Data :", response.data);
