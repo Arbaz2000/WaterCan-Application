@@ -1,6 +1,6 @@
 // Latest version
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useRef} from "react";
 import {
   View,
   Text,
@@ -43,6 +43,16 @@ const Map = ({ routeStart, setRouteStart }) => {
     longitudeDelta: 0.0421,
   });
   // const [routeStart, setRouteStart] = useState(false);
+  // const zoomOut =() =>{
+  //   if(mapRef.current){
+  //     mapRef.current.animateCamera({
+  //       center:{latitude: 28.21185895002364,longitude: 74.94994783048074 },
+  //       zoom: 8,
+  //       pitch: 0,
+  //       heading: 0,
+  //     })
+  //   }
+  // }
 
   const routeFun = () => {
     setMarkerPress(false);
@@ -100,6 +110,7 @@ console.log('------------------' , JSON.stringify(selectedRoute))
   return (
     <View style={styles.container}>
       <MapView
+      // ref={mapRef}
         style={styles.map}
         provider={Platform.OS == 'android' ?  PROVIDER_GOOGLE : PROVIDER_DEFAULT}
         initialRegion={{
@@ -108,9 +119,16 @@ console.log('------------------' , JSON.stringify(selectedRoute))
           latitudeDelta: 0.05,
           longitudeDelta: 0.05,
         }}
+        initialCamera={{
+          center:{latitude: 28.21185895002364,longitude: 74.94994783048074 },
+          pitch:0,
+          heading:0,
+          zoom:12
+        }}
         showsUserLocation={true}
         followsUserLocation={true}
       >
+        {/* <Button title="Zoom out" onPress={zoomOut}/> */}
         {selectedRoute &&
           selectedRoute.map((marker) => {
             console.log(

@@ -43,8 +43,9 @@ const RouteScreen = ({ navigation }) => {
         setLoading(true);
         const driverId = await AsyncStorage.getItem("driverId");
         const response = await axios.get(
-          `https://52.66.246.44:9000/api/route/${driverId}`
+          `http://192.168.0.161:9000/api/route/${driverId}`
         );
+        console.log("response--------> ", response)
         setLoading(false);
         setRoutesData(response.data.customersByRoute);
       } catch (error) {
